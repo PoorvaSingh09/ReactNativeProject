@@ -1,23 +1,38 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TextInput, ActivityIndicator } from 'react-native';
+import Blink from './custom/Blink';
+import {styles} from './custom/Styles';
 
-export default class App extends React.Component {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <View>
+          <Blink text="Test Blinking" />
+          <Blink text="Now you see it!"/>
+        </View>
+        <View>
+          <TextInput
+            style={styles.normalText}
+            placeholder="Type here to translate!"
+            onChangeText={(text) => this.setState({text})}
+          />
+          <Text style={styles.bigText}>
+            {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+          </Text>
+        </View>
+        <View>
+          <ActivityIndicator size="large" color="33FFEC"/>
+          <ActivityIndicator size="small" color="33FF77"/>
+          <ActivityIndicator size="large" color="33FF77"/>
+          <ActivityIndicator size="small" color="33FFEC"/>
+        </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
