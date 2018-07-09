@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     height: 44,
     backgroundColor: 'yellow'
+  },
+  scrollContainerStyle: {
+    paddingVertical:20,
   }
 });
 

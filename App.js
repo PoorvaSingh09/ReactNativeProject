@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, TextInput, ActivityIndicator, ScrollView, FlatList } from 'react-native';
 import Blink from './custom/Blink';
 import {styles} from './custom/Styles';
 
@@ -11,6 +11,7 @@ export default class App extends Component {
 
   render() {
     return (
+      <ScrollView contentContainerStyle={styles.scrollContainerStyle}>
       <View style={styles.container}>
         <View>
           <Blink text="Test Blinking" />
@@ -32,7 +33,16 @@ export default class App extends Component {
           <ActivityIndicator size="large" color="#33FF77"/>
           <ActivityIndicator size="small" color="#33FFEC"/>
         </View>
+        <View style={{height:100}}>
+          <FlatList
+            data={[{key: 'Line 1'}, {key: 'Line 2'}, {key: 'Line 3'}, {key: 'Line 4'}, {key: 'Line 5'},
+                    {key: 'Line 6'}, {key: 'Line 7'}, {key: 'Line 8'}, {key: 'Line 9'}, {key: 'Line 10'}]}
+            renderItem={({item}) => <Text>{item.key}</Text>}
+          />
+        </View>
       </View>
+
+      </ScrollView>
     );
   }
 }
