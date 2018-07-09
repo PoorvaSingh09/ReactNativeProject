@@ -26,11 +26,11 @@ export default class App extends Component {
             {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
           </Text>
         </View>
-        <View>
-          <ActivityIndicator size="large" color="33FFEC"/>
-          <ActivityIndicator size="small" color="33FF77"/>
-          <ActivityIndicator size="large" color="33FF77"/>
-          <ActivityIndicator size="small" color="33FFEC"/>
+        <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
+          <ActivityIndicator size="large" color="#33FFEC" />
+          <ActivityIndicator size="small" color="#33FF77"/>
+          <ActivityIndicator size="large" color="#33FF77"/>
+          <ActivityIndicator size="small" color="#33FFEC"/>
         </View>
       </View>
     );
