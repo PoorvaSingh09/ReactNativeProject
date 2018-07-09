@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, ActivityIndicator, ScrollView, FlatList } from 'react-native';
+import { Image, StyleSheet, Text, View, TextInput, ActivityIndicator, ScrollView, FlatList } from 'react-native';
 import Blink from './custom/Blink';
 import {styles} from './custom/Styles';
 
@@ -32,6 +32,11 @@ export default class App extends Component {
           <ActivityIndicator size="small" color="#33FF77"/>
           <ActivityIndicator size="large" color="#33FF77"/>
           <ActivityIndicator size="small" color="#33FFEC"/>
+        </View>
+        <View>
+          <Image style={{width:100, height:100}}
+                  source={{uri:'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
+          />
         </View>
         <View style={{height:100}}>
           <FlatList
