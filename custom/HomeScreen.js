@@ -9,12 +9,16 @@ class HomeScreen extends Component {
     this.state = {text: ''};
   }
 
-  static navigationOptions = {
-    title: 'Welcome',
-  };
+  static navigationOptions = ({ navigate, navigation }) => ({
+   title: "Welcome",
+   headerRight:
+    <Button title="Next"
+            onPress={()=>{ navigation.navigate('Profile', {name: 'Jane Next'}); }}
+    />,
+ })
 
   render() {
-      const {navigate} = this.props.navigation;
+    const {navigate} = this.props.navigation;
     return (
       <ScrollView>
       <View>
